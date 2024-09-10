@@ -1,6 +1,6 @@
 # Design-of-nor-gate-schematic-and-layout
 ---
-This project contains the design of an CMOS nor gate with representing it the form of schematic and layout design. We can see the working of an nor gate with respect to the input applied and their output which can be represented in the form of an waveforms. The design will utilize the models that are present in under the __skywater 130nm pdk__ and various open source tools such as, __Xschem__, __NGSPICE__, __MAGIC__, __Netgen__, etc.
+This project contains the design of an CMOS nor gate and representing it in the form of schematic and layout design. We can see the working of an nor gate with respect to the input applied and their output which can be represented in the form of an waveforms. The design will utilize the models that are present in under the __skywater 130nm pdk__ and various open source tools such as, __Xschem__, __NGSPICE__, __MAGIC__, __Netgen__, etc.
 
 Let's get right into it.
 
@@ -10,13 +10,12 @@ Let's get right into it.
 ## Contents
 - [1. Schematic representation](#1-Schematic-representation)
 - [2. Layout representation](#2-Layout-representation)
--
 
 ## 1. Schematic representation
 
 A CMOS NOR gate is a logic gate that implements the logical NOR operation. It has two inputs and one output. The output is high (logic 1) only when **both** inputs are low (logic 0). Otherwise, the output is low (logic 0).
 
-A CMOS NOR gate is constructed using a network of NMOS and PMOS transistors. The NMOS transistors are connected in series between the power supply (VDD) and the output, while the PMOS transistors are connected in parallel between the ground (VSS) and the output. The inputs are connected to the gates of both NMOS and PMOS transistors.
+A CMOS NOR gate is constructed using a network of NMOS and PMOS transistors. The PMOS transistors are connected in series between the power supply (VDD) and the output, while the NMOS transistors are connected in parallel between the ground (VSS) and the output. The inputs are connected to the gates of both NMOS and PMOS transistors.
 
 ![col4](https://github.com/user-attachments/assets/52d6ba22-799c-4044-8b4c-bfbaeae362cf)
 
@@ -34,10 +33,10 @@ The trutrh table representation is shown below:
 
 | InputA  | InputB | Output | 
 |---------|------- | ------ |
-|    0    |    0   |    0   | 
+|    0    |    0   |    1   | 
 |    0    |    1   |    0   |
 |    1    |    0   |    0   |
-|    1    |    1   |    1   |
+|    1    |    1   |    0   |
 
 Below is the waveforms that can re used to analyze the output logic values for differnt inputs
 
