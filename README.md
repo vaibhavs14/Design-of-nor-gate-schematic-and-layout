@@ -10,6 +10,7 @@ Let's get right into it.
 ## Contents
 - [1. Schematic representation](#1-Schematic-representation)
 - [2. Layout representation](#2-Layout-representation)
+- [3. Layout versus schematic](#3-Layout-versus-schematic)
 
 ## 1. Schematic representation
 
@@ -63,6 +64,26 @@ We have used the layout specification that was avaialble from the open source sk
 
 ![col5](https://github.com/user-attachments/assets/06aa72a8-a4a2-4c1a-bbee-46694a878e67)
 
+---
 
+## 3. Layout versus schematic (LVS)
 
+In our above sections we have discussed and represented the CMOS inverter in both schematic and layout forms, ensuring a thorough understanding of each representation. The schematic provides a high-level overview of the circuit’s functionality, while the layout translates this functionality into a physical form that can be fabricated on a silicon wafer. Now we can perform a **Layout Versus Schematic (LVS)** check. 
+Below if the netlist that is extracted from the schematic of **nor gate** in the format of spice file:
 
+![nor_schematic_netlist](https://github.com/user-attachments/assets/55c4001c-0687-407b-b921-e577753e6e2d)
+
+The netlist of the layout is also shown below:
+
+![layout_netlist](https://github.com/user-attachments/assets/0b78cfc9-2b71-4831-8c7c-d6c6e320d626)
+
+Now both the netlists can be compared with each other from the **Netgen** tkcon window. use the command ```lvs``` <filename.spice> <filename.spice>. 
+After the tool runs the command you can get to see the result in a tkcon window like shown below:
+
+![lvs_nor_gate](https://github.com/user-attachments/assets/a35debcf-7306-4a59-9305-3910360df7aa)
+
+You can see from the above results which shows the number of devices that our schematic and layout design contains; and also the number of total wires our design has. If both netlits matchs, then the final output shows as: **Circuits match uniquely**. This final output results will be dumped into a single file named "comp.out". We can use a editor tool to view this file. The "comp.out" file contains a side by side comparison between both the netlist which is shown below:
+
+![comp_out_nor](https://github.com/user-attachments/assets/b0e4e4f4-5af5-4220-825a-c3532cab2993)
+
+Finally we perform a Layout Versus Schematic (LVS) check to ensure the accuracy and integrity of our design. With these steps this project concludes.
