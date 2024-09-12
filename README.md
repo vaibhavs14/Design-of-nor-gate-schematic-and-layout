@@ -14,9 +14,9 @@ Let's get right into it.
 
 ## 1. Schematic representation
 
-A CMOS NOR gate is a logic gate that implements the logical NOR operation. It has two inputs and one output. The output is high (logic 1) only when **both** inputs are low (logic 0). Otherwise, the output is low (logic 0).
+A CMOS **NOR gate** is a logic gate that implements the logical **NOR** operation. It has two inputs and one output. The output is high (logic 1) only when **both** inputs are low (logic 0). Otherwise, the output is low (logic 0).
 
-A CMOS NOR gate is constructed using a network of NMOS and PMOS transistors. The PMOS transistors are connected in series between the power supply (VDD) and the output, while the NMOS transistors are connected in parallel between the ground (VSS) and the output. The inputs are connected to the gates of both NMOS and PMOS transistors.
+A CMOS **NOR gate** is constructed using a network of NMOS and PMOS transistors. The PMOS transistors are connected in series between the power supply (VDD) and the output, while the NMOS transistors are connected in parallel between the ground (VSS) and the output. The inputs are connected to the gates of both NMOS and PMOS transistors.
 
 ![col4](https://github.com/user-attachments/assets/52d6ba22-799c-4044-8b4c-bfbaeae362cf)
 
@@ -59,8 +59,8 @@ When the input is high, the **NMOS** transistor turns on and pulls the output to
 
 ## 2. Layout representation
 
-We have seen the representation of the CMOS nor gate in the form of the schematic from **xschem** and waveforms derived for the given inputs from **ngspice** in the above section. Now we can represent the same nor gate in the form of an layout. Layout design defines the physical arrangement of components and interconnections on the silicon substrate. It's the blueprint that guides the fabrication process. A schematic design alone cannot be directly used to manufacture a chip.
-We have used the layout specification that was avaialble from the open source sky water sky130 PDK to design the layout of our nor gate. Here the ratio of the **pmos to nmos** is taken as **2:1**. Open source tool **magic** is used as layout editor to create our layout reprsentation of nor gate.
+We have seen the representation of the CMOS **Nor gate** in the form of the schematic from **xschem** and waveforms derived for the given inputs from **ngspice** in the above section. Now we can represent the same **Nor gate** in the form of an layout. Layout design defines the physical arrangement of components and interconnections on the silicon substrate. It's the blueprint that guides the fabrication process. A schematic design alone cannot be directly used to manufacture a chip.
+We have used the layout specification that was avaialble from the open source sky water sky130 PDK to design the layout of our nor gate. Here the ratio of the **pmos to nmos** is taken as **2:1**. Open source tool **magic** is used as layout editor to create our layout reprsentation of **Nor gate**.
 
 ![col5](https://github.com/user-attachments/assets/06aa72a8-a4a2-4c1a-bbee-46694a878e67)
 
@@ -68,8 +68,8 @@ We have used the layout specification that was avaialble from the open source sk
 
 ## 3. Layout versus schematic (LVS)
 
-In our above sections we have discussed and represented the CMOS inverter in both schematic and layout forms, ensuring a thorough understanding of each representation. The schematic provides a high-level overview of the circuit’s functionality, while the layout translates this functionality into a physical form that can be fabricated on a silicon wafer. Now we can perform a **Layout Versus Schematic (LVS)** check. 
-Below if the netlist that is extracted from the schematic of **nor gate** in the format of spice file:
+In our above sections we have discussed and represented the CMOS **Nor gate** in both schematic and layout forms, ensuring a thorough understanding of each representation. The schematic provides a high-level overview of the circuit’s functionality, while the layout translates this functionality into a physical form that can be fabricated on a silicon wafer. Now we can perform a **Layout Versus Schematic (LVS)** check. 
+Below if the netlist that is extracted from the schematic of **Nor gate** in the format of spice file:
 
 ![nor_schematic_netlist](https://github.com/user-attachments/assets/55c4001c-0687-407b-b921-e577753e6e2d)
 
@@ -82,8 +82,8 @@ After the tool runs the command you can get to see the result in a tkcon window 
 
 ![lvs_nor_gate](https://github.com/user-attachments/assets/a35debcf-7306-4a59-9305-3910360df7aa)
 
-You can see from the above results which shows the number of devices that our schematic and layout design contains; and also the number of total wires our design has. If both netlits matchs, then the final output shows as: **Circuits match uniquely**. This final output results will be dumped into a single file named "comp.out". We can use a editor tool to view this file. The "comp.out" file contains a side by side comparison between both the netlist which is shown below:
+You can see from the above results which shows the number of devices that our schematic and layout design contains; and also the number of total wires our design has. If both netlits matchs, then the final output shows as: **Circuits match uniquely**. This final output results will be dumped into a single file named <comp.out>. We can use a editor tool to view this file. The <comp.out> file contains a side by side comparison between both the netlist which is shown below:
 
 ![comp_out_nor](https://github.com/user-attachments/assets/b0e4e4f4-5af5-4220-825a-c3532cab2993)
 
-Finally we perform a Layout Versus Schematic (LVS) check to ensure the accuracy and integrity of our design. With these steps this project concludes.
+Finally we perform a **Layout Versus Schematic (LVS)** check to ensure the accuracy and integrity of our design. With these steps this project concludes.
